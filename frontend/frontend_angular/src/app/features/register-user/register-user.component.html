@@ -1,0 +1,46 @@
+<div class = "main">
+    <form (ngSubmit)="saveUser()" #formRef="ngForm">
+        <label>
+          Name:
+          <input type="text" name="name" [(ngModel)]="registerUser.name" required>
+        </label>
+        <br>
+      
+        <label>
+          Email:
+          <input type="email" name="email" [(ngModel)]="registerUser.email" required>
+        </label>
+        <br>
+      
+        <label>
+          Role:
+          <select name="role" [(ngModel)]="registerUser.role" required>
+            <option value="">--Select Role--</option>
+            <option value="LANDLORD">Landlord</option>
+            <option value="TENANT">Tenant</option>
+          </select>
+        </label>
+        <br>
+      
+        <!-- Conditional offering field for LANDLORD -->
+        <div [hidden]="registerUser.role !== 'LANDLORD'">
+          <label>
+            What are you offering?
+            <textarea name="offerings" [(ngModel)]="registerUser.offerings"></textarea>
+          </label>
+        </div>
+      
+        <!-- Conditional preferences field for TENANT -->
+        <div [hidden]="registerUser.role !== 'TENANT'">
+          <label>
+            What are your preferences?
+            <textarea name="preferences" [(ngModel)]="registerUser.preferences"></textarea>
+          </label>
+        </div>
+      
+        <br>
+        <button type="submit" [disabled]="formRef.invalid">Register</button>
+      
+      </form>
+      
+</div>
