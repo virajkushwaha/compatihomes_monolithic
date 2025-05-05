@@ -1,4 +1,4 @@
-package com.fast.compatiHomes;
+package com.housing;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
