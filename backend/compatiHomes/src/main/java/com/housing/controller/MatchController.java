@@ -1,8 +1,8 @@
-package com.fast.compatiHomes.controller;
+package com.housing.controller;
 
-import com.fast.compatiHomes.model.User;
-import com.fast.compatiHomes.repo.UserRepository;
-import com.fast.compatiHomes.services.MatchServices;
+import com.housing.model.entity.User;
+import com.housing.repository.UserRepository;
+import com.housing.services.MatchServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

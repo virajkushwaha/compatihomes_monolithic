@@ -1,10 +1,10 @@
-package com.fast.compatiHomes.services;
+package com.housing.services;
 
 
-import com.fast.compatiHomes.model.Match;
-import com.fast.compatiHomes.model.User;
-import com.fast.compatiHomes.repo.MatchRepository;
-import com.fast.compatiHomes.repo.UserRepository;
+import com.housing.model.Match;
+import com.housing.model.entity.User;
+import com.housing.repository.MatchRepository;
+import com.housing.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,7 +57,7 @@ public class MatchServices {
     }
 
     public void acceptMatch(Long matchId) {
-        Match match = matchRepo.findById(matchId).orElseThrow(() -> new RuntimeException("Match not found"));
+        Match match = matchRepo.findById(matchId).orElseThrow(() -> new RuntimeException("com.housing.model.entity.Match not found"));
         match.setAccepted(true);
         matchRepo.save(match);
     }
